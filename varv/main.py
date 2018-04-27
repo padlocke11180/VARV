@@ -692,7 +692,8 @@ def main(arg_string=None):
 
 		if not aopts["SEPCHR"]:
 			# Extract the positions from the bedfile and create a separate vcf
-			tabixcommand = "{tabix} -h -R {bed} {vcf} | bgzip -c >| {out}".format(
+#			tabixcommand = "{tabix} -h -R {bed} {vcf} | bgzip -c >| {out}".format(
+			tabixcommand = "{tabix} -h -B {bed} {vcf} | bgzip -c >| {out}".format(
 				tabix = tabix,
 				vcf = orig_vcf_path,
 				bed = gene_bed,
