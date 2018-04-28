@@ -733,7 +733,7 @@ def main(arg_string=None):
 					first = False
 
 				# Extract the positions from the bedfile and create a separate vcf
-				tabixcommand = "{tabix} -R {bed} {vcf} >> {out}".format(
+				tabixcommand = "{tabix} -B {bed} {vcf} >> {out}".format(
 					tabix = tabix,
 					vcf = vcf,
 					bed = gene_bed,
