@@ -692,8 +692,8 @@ def main(arg_string=None):
 
 		if not aopts["SEPCHR"]:
 			# Extract the positions from the bedfile and create a separate vcf
-#			tabixcommand = "{tabix} -h -R {bed} {vcf} | bgzip -c >| {out}".format(
-			tabixcommand = "{tabix} -h -B {bed} {vcf} | bgzip -c >| {out}".format(
+			tabixcommand = "{tabix} -h -R {bed} {vcf} | bgzip -c >| {out}".format(
+#			tabixcommand = "{tabix} -h -B {bed} {vcf} | bgzip -c >| {out}".format(
 				tabix = tabix,
 				vcf = orig_vcf_path,
 				bed = gene_bed,
@@ -733,7 +733,7 @@ def main(arg_string=None):
 					first = False
 
 				# Extract the positions from the bedfile and create a separate vcf
-				tabixcommand = "{tabix} -B {bed} {vcf} >> {out}".format(
+				tabixcommand = "{tabix} -R {bed} {vcf} >> {out}".format(
 					tabix = tabix,
 					vcf = vcf,
 					bed = gene_bed,
@@ -1008,8 +1008,8 @@ def main(arg_string=None):
 			pass
 
 		# Extract variants within significant genes only and write them to a VCF
-#		tabix_cmd = "{tabix} -h -R {bed} {vcf} >> {outvcf}".format(
-		tabix_cmd = "{tabix} -h -B {bed} {vcf} >> {outvcf}".format(
+		tabix_cmd = "{tabix} -h -R {bed} {vcf} >> {outvcf}".format(
+#		tabix_cmd = "{tabix} -h -B {bed} {vcf} >> {outvcf}".format(
 			tabix = tabix,
 			vcf = vcf_for_tests,
 			bed = sig_genes_bed,
