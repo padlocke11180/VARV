@@ -1008,7 +1008,8 @@ def main(arg_string=None):
 			pass
 
 		# Extract variants within significant genes only and write them to a VCF
-		tabix_cmd = "{tabix} -h -R {bed} {vcf} >> {outvcf}".format(
+#		tabix_cmd = "{tabix} -h -R {bed} {vcf} >> {outvcf}".format(
+		tabix_cmd = "{tabix} -h -B {bed} {vcf} >> {outvcf}".format(
 			tabix = tabix,
 			vcf = vcf_for_tests,
 			bed = sig_genes_bed,
